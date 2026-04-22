@@ -1,0 +1,4 @@
+- name: include role
+  ansible.builtin.import_role:
+    name: common
+    task_from: include-import.yaml
