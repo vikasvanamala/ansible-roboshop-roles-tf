@@ -5,16 +5,16 @@
     ami_id: ami-0220d79f3f480ecf5
     sg_id: sg-0cc1cfc505eb56913
     instances:
-    - mysql
-    - redis
-    - mongodb
-    - rabbitmq
-    - catalogue
-    - user
-    - cart
-    - shipping
-    - payment
-    - frontend
+    # - mysql
+    # - redis
+    # - mongodb
+    # - rabbitmq
+    # - catalogue
+    # - user
+    # - cart
+    # - shipping
+    # - payment
+    # - frontend
 
   tasks:
   - name: create ec2-instance

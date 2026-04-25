@@ -1,10 +1,10 @@
-MONGODB_HOST: mongodb.vicky08.fun
-REDIS_HOST: redis.vicky08.fun
-RABBITMQ_HOST: rabbitmq.vicky08.fun
-MYSQL_HOST: mysql.vicky08.fun
+MONGODB_HOST: mongodb-{{ env }}.vicky08.fun
+REDIS_HOST: redis-{{ env }}.vicky08.fun
+RABBITMQ_HOST: rabbitmq-{{ env }}.vicky08.fun
+MYSQL_HOST: mysql-{{ env }}.vicky08.fun
 
-CATALOGUE_HOST: catalogue.vicky08.fun
-CART_HOST: cart.vicky08.fun
-USER_HOST: user.vicky08.fun
-SHIPPING_HOST: shipping.vicky08.fun
-PAYMENT_HOST: payment.vicky08.fun
+CATALOGUE_HOST: catalogue.backend-alb-{{ env }}.vicky08.fun
+CART_HOST: cart.backend-alb-{{ env }}.vicky08.fun
+USER_HOST: user.backend-alb-{{ env }}.vicky08.fun
+SHIPPING_HOST: shipping.backend-alb-{{ env }}.vicky08.fun
+PAYMENT_HOST: payment.backend-alb-{{ env }}.vicky08.fun
