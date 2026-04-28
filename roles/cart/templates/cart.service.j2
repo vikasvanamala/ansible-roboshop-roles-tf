@@ -5,7 +5,7 @@ User=roboshop
 // highlight-start
 Environment=REDIS_HOST={{ REDIS_HOST }}        # <REDIS-SERVER-IP address>
 Environment=CATALOGUE_HOST={{ CATALOGUE_HOST }}   # <catalogue server ip address>
-Environment=CATALOGUE_PORT=8080
+Environment=CATALOGUE_PORT=80
 // highlight-end
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
