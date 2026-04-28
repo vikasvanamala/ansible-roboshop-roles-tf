@@ -4,6 +4,8 @@
   vars:
     ami_id: ami-0220d79f3f480ecf5
     sg_id: sg-0cc1cfc505eb56913
+    zone_id: 
+    domain_name: "vicky.08.fun"
     instances:
     # - mysql
     # - redis
@@ -26,3 +28,31 @@
       tags:
         Name: "{{ item }}"
     loop: "{{ instances }}"  
+    register: ec2_output
+
+
+- name: create route53 record
+  amazon.route53:
+    state: present
+    zone: "{{ domain_name }}"
+    record: "{{ item.item }}.{{ domain_name }}"
+    type: A 
+    ttl: 1
+    value: "{{ item.instances[0].private_ip_address }}"
+    overwrite: true
+  loop: "{{ ec2_ouput.results }}"
+
+
+- name: create route53 record
+  amazon.aws.route53:
+    state: present
+    zone: "{{ domain_name }}"
+    record: "{{ domain_name }}"
+    type: A 
+    ttl: 1
+    value: "{{ item.instances[0].public_ip_address }}"
+    overwrite: true
+  when: item.item == "frontend"
+  loop: "{{ ec2_ouput.results }}"
+
+
