@@ -4,7 +4,7 @@ Description=Shipping Service
 [Service]
 User=roboshop
 // highlight-start
-Environment=CART_ENDPOINT={{ CART_HOST }}:8080  # <CART-SERVER-IPADDRESS> 
+Environment=CART_ENDPOINT={{ CART_HOST }}:80  # <CART-SERVER-IPADDRESS> 
 Environment=DB_HOST={{ MYSQL_HOST }}       # <MYSQL-SERVER-IPADDRESS>
 // highlight-end
 ExecStart=/bin/java -jar /app/shipping.jar
